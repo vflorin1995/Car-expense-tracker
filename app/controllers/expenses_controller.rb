@@ -19,9 +19,10 @@ class ExpensesController < ApplicationController
 
   # POST /expenses or /expenses.json
   def create
-    @expense = Expense.new(Name: params.dig(:expense, :Name), Amount: params.dig(:expense, :Amount), AuthorId: current_user.id)
+    @expense = Expense.new(Name: params.dig(:expense, :Name), Amount: params.dig(:expense, :Amount),
+                           AuthorId: current_user.id)
     @idd = params.dig(:expense, :id)
-    
+
     respond_to do |format|
       if @expense.save
         @lastexp = Expense.last
