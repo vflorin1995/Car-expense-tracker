@@ -1,16 +1,16 @@
 body {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 img {
-    width: 100px;
-    height: 100px;
-    padding: 5px;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
 }
 
 .groupContainer {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    margin: 10px; 
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 10px;
 }
