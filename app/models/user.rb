@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :expenses
   has_many :groups
 
+  validates :Name, presence: true
 end
