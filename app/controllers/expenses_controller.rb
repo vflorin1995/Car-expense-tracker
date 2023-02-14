@@ -3,44 +3,23 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all
+    @expenses = Expense.where(AuthorId: current_user.id).order('created_at DESC')
   end
-
-  # GET /expenses/1 or /expenses/1.json
-  def show; end
 
   # GET /expenses/new
   def new
     @expense = Expense.new
   end
 
-  # GET /expenses/1/edit
-  def edit; end
-
   # POST /expenses or /expenses.json
   def create
-    @expense = Expense.new(expense_params)
+    @expense = Expense.new(Name: params.dig(:expense, :Name), Amount: params.dig(:expense, :Amount), AuthorId: current_user.id)
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to expense_url(@expense), notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
+        format.html { redirect_to group_expenses_path, notice: 'Expense was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /expenses/1 or /expenses/1.json
-  def update
-    respond_to do |format|
-      if @expense.update(expense_params)
-        format.html { redirect_to expense_url(@expense), notice: 'Expense was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -1,10 +1,4 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>Icon:</strong>
-    <%= group.Icon %>
-  </p>
-  <p>
-    <strong>Name:</strong>
-    <%= link_to group.Name, group_expenses_path(group.id) %>
-  </p>
+<div id="<%= dom_id group %>" class="groupContainer">
+  <img src=<%= group.Icon %> alt="icon">
+  <%= link_to group.Name, group_expenses_path(group.id) %>
 </div>

@@ -5,10 +5,8 @@
 <div id="expenses">
   <% @expenses.each do |expense| %>
     <%= render expense %>
-    <p>
-      <%= link_to "Show this expense", expense %>
-    </p>
   <% end %>
 </div>
 
 <%= link_to "New expense", new_group_expense_path	 %>
+<%= link_to "Back", groups_path	 %>

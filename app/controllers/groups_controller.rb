@@ -3,19 +3,13 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.where(AuthorId: current_user.id)
   end
-
-  # GET /groups/1 or /groups/1.json
-  def show; end
 
   # GET /groups/new
   def new
     @group = Group.new
   end
-
-  # GET /groups/1/edit
-  def edit; end
 
   # POST /groups or /groups.json
   def create
@@ -26,19 +20,6 @@ class GroupsController < ApplicationController
         format.html { redirect_to groups_path, notice: 'Group was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /groups/1 or /groups/1.json
-  def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
   end

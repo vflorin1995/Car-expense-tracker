@@ -11,8 +11,6 @@
     </div>
   <% end %>
 
-  <%= current_user.id %>
-
   <div>
     <%= form.label :Name, style: "display: block" %>
     <%= form.text_field :Name %>
@@ -24,6 +22,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Save" %>
   </div>
 <% end %>
