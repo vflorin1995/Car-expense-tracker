@@ -4,13 +4,14 @@ Rails.application.routes.draw do
      registrations: 'users/registrations',
   }
 
-  resources :expenses
-  resources :groups
-  resources :users
+  resources :groups, only: [:index, :create, :new] do
+    resources :expenses, only: [:index, :create, :new] do
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :users, only: [:index, :create, :destroy, :new]
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "groups#index"
 end

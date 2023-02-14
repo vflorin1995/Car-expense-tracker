@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_13_103557) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_13_100820) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,11 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_103557) do
     t.integer "AuthorId"
     t.string "Name"
     t.integer "Amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "gropuexpenses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +50,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_103557) do
 
   add_foreign_key "expenses", "users", column: "AuthorId", on_delete: :cascade
   add_foreign_key "groups", "users", column: "AuthorId", on_delete: :cascade
-  add_foreign_key "groupsexpenses", "expenses", column: "expenses_id", on_delete: :cascade
-  add_foreign_key "groupsexpenses", "groups", on_delete: :cascade
 end
