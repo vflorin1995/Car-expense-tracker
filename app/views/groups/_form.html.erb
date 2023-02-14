@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :AuthorId, style: "display: block" %>
-    <%= form.number_field :AuthorId %>
-  </div>
+  <%= current_user.id %>
 
   <div>
     <%= form.label :Name, style: "display: block" %>

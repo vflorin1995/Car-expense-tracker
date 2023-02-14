@@ -50,4 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_100820) do
 
   add_foreign_key "expenses", "users", column: "AuthorId", on_delete: :cascade
   add_foreign_key "groups", "users", column: "AuthorId", on_delete: :cascade
+  add_foreign_key "groupsexpenses", "expenses", column: "expenses_id", on_delete: :cascade
+  add_foreign_key "groupsexpenses", "groups", on_delete: :cascade
 end

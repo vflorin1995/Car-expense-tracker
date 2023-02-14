@@ -1,17 +1,10 @@
 <div id="<%= dom_id group %>">
   <p>
-    <strong>Authorid:</strong>
-    <%= group.AuthorId %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= group.Name %>
-  </p>
-
-  <p>
     <strong>Icon:</strong>
     <%= group.Icon %>
   </p>
-
+  <p>
+    <strong>Name:</strong>
+    <%= link_to group.Name, group_expenses_path(group.id) %>
+  </p>
 </div>
