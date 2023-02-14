@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.label :Group %>
+    <%= form.collection_select :id, Group.order(:Name),:id,:Name, include_blank: "--Choose Group--" %>
+  </div>
+
+  <div>
     <%= form.submit "Save"%>
   </div>
 <% end %>

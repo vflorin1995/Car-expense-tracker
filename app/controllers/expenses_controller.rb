@@ -3,7 +3,13 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.where(AuthorId: current_user.id).order('created_at DESC')
+    # @expenses = Expense.where(AuthorId: current_user.id).order('created_at DESC')
+    @expenses = Groupsexpense.includes(:expenses).where(group_id: params[:group_id]).order('expenses.created_at DESC')
+
+    @total = 0
+    @expenses.each do |exp|
+      @total += exp.expenses.Amount
+    end
   end
 
   # GET /expenses/new
@@ -14,9 +20,12 @@ class ExpensesController < ApplicationController
   # POST /expenses or /expenses.json
   def create
     @expense = Expense.new(Name: params.dig(:expense, :Name), Amount: params.dig(:expense, :Amount), AuthorId: current_user.id)
-
+    @idd = params.dig(:expense, :id)
+    
     respond_to do |format|
       if @expense.save
+        @lastexp = Expense.last
+        Groupsexpense.create(group_id: @idd, expenses_id: @lastexp.id)
         format.html { redirect_to group_expenses_path, notice: 'Expense was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -1,4 +1,9 @@
 <div id="<%= dom_id group %>" class="groupContainer">
   <img src=<%= group.Icon %> alt="icon">
   <%= link_to group.Name, group_expenses_path(group.id) %>
+  <% @total = 0 %>
+  <% group.groupsexpenses.each do |exp| %>
+    <% @total += exp.expenses.Amount %>
+  <% end %>
+  <div> <%= @total %>  </div>
 </div>
