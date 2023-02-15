@@ -33,6 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_100820) do
   create_table "groupsexpenses", force: :cascade do |t|
     t.integer "group_id"
     t.integer "expenses_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
