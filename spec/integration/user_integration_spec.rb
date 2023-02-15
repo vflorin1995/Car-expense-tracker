@@ -5,7 +5,7 @@ RSpec.describe 'users tests', type: :system do
     subject { User.new(Name: 'John', email: 'qq@qq.qq', password: '123456') }
     before { subject.save }
     before(:each) do
-      @category = Group.create(Name: 'Fuel', AuthorId: subject.id, Icon: "www.google.com/cat.jpg")
+      @category = Group.create(Name: 'Fuel', AuthorId: subject.id, Icon: 'www.google.com/cat.jpg')
       @dealing = Expense.create(Name: 'STOP', Amount: 20, AuthorId: subject.id)
       visit root_path
     end
@@ -21,6 +21,5 @@ RSpec.describe 'users tests', type: :system do
     it 'shows signup button' do
       expect(page).to have_content('Sign Up')
     end
-
   end
 end

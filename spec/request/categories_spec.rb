@@ -11,7 +11,7 @@ RSpec.describe GroupsController, type: :request do
     end
 
     it 'should redirect to sign_up' do
-      Group.create(Name: 'Fuel', AuthorId: subject.id, Icon: "www.google.com/cat.jpg")
+      Group.create(Name: 'Fuel', AuthorId: subject.id, Icon: 'www.google.com/cat.jpg')
       expect(response).to redirect_to(new_user_session_path)
     end
   end
