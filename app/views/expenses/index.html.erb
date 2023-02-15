@@ -1,16 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<header >
+  <div> Expenses </div>
+</header>
 
-<h1>Expenses</h1>
-
-<div>Total <%= @total %> </div>
+<div class="totalExpenses">
+  <div> Total </div> 
+  <div> <%= @total %> $ </div>
+</div>
 
 <div id="expenses">
   <% @expenses.each do |expense| %>
-    <%= expense.expenses.Name %>
-    <%= expense.expenses.Amount %>
-    <br/>
+    <div class="expenseContainer">
+      <div class="expenseNameDate">
+        <div> <%= expense.expenses.Name %> </div>
+        <div class="gray"> 
+          <%= expense.expenses.created_at.year %> -
+          <%= expense.expenses.created_at.month %> -
+          <%= expense.expenses.created_at.day %> 
+        </div>
+      </div>
+      <div> <%= expense.expenses.Amount %> $ </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New expense", new_group_expense_path	 %>
-<%= link_to "Back", groups_path	 %>
+<div class="headerBack">
+  <%= link_to "<", groups_path	 %>
+</div>
+
+<div class="greenButton">
+  <%= link_to "New expense", new_group_expense_path	 %>
+</div>

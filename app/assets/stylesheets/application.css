@@ -1,5 +1,7 @@
 body {
-  background-color: aliceblue;
+  font-family: 'proxima-nova', sans-serif;
+  background-color: #f5f6f8;
+  margin: 0;
 }
 
 img {
@@ -13,4 +15,80 @@ img {
   align-items: center;
   background-color: white;
   margin: 10px;
+}
+
+.expenseContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin: 10px;
+  padding: 1rem;
+}
+
+.expenseNameDate {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #3778c2;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.linkBox {
+  flex: 1;
+}
+
+.total {
+  padding: 10px;
+}
+
+.greenButton {
+  background-color: #5fb523;
+  position: absolute;
+  padding: 0.5rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+
+.greenButton > * {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem;
+  border: solid 1px white;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.totalExpenses {
+  padding: 0.5rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gray {
+  color: gray;
+}
+
+.headerBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.headerBack > * {
+  text-decoration: none;
+  color: white;
 }
