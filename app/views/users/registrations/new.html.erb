@@ -1,34 +1,21 @@
-<h2>Sign ups</h2>
+<header>Sign ups</header>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :Name %><br />
-    <%= f.text_field :Name, autofocus: true, autocomplete: "Name" %>
-  </div>
+  <%= f.text_field :Name, autofocus: true, autocomplete: "Name", placeholder: "Name" %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+  <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password (min 6 characters)"  %>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
+  <div class="greenButton">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+
+<div class="headerBack">
+  <%= link_to "<", users_path	 %>
+</div>
 
 <%= render "users/shared/links" %>

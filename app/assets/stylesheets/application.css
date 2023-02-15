@@ -108,3 +108,34 @@ select {
   background-color: white;
   color: gray;
 }
+
+.otherLink {
+  background-color: aqua;
+}
+
+h1 {
+  text-align: center;
+}
+
+.entryButton {
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.entryButton > * {
+  text-decoration: none;
+  flex: 1;
+  color: gray;
+  text-align: center;
+}
+
+.blue {
+  background-color: #3778c2;
+}
+
+.blue >* {
+  color: white;
+}
