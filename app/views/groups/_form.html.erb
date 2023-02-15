@@ -10,18 +10,9 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :Name, style: "display: block" %>
-    <%= form.text_field :Name %>
-  </div>
-
-  <div>
-    <%= form.label :Icon, style: "display: block" %>
-    <%= form.text_field :Icon %>
-  </div>
-
-  <div>
+  <%= form.text_field :Name, placeholder: "Name" %>
+  <%= form.text_field :Icon, placeholder: "Icon URL" %>
+  <div class="greenButton">
     <%= form.submit "Save" %>
   </div>
 <% end %>
