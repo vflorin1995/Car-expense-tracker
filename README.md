@@ -120,7 +120,7 @@ Give this project a ⭐️ if you like it !
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 Shout out to the Ruby documentation :)
-
+I would like to thank Gregoire Vella on Behance for the design inspiration
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
