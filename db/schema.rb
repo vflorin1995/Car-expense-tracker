@@ -22,17 +22,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_100820) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "groupexpenses", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "expenses_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "groups", force: :cascade do |t|
     t.integer "AuthorId"
     t.string "Name"
     t.string "Icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "groupsexpenses", force: :cascade do |t|
-    t.integer "group_id"
-    t.integer "expenses_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_100820) do
   end
 
   add_foreign_key "expenses", "users", column: "AuthorId", on_delete: :cascade
+  add_foreign_key "groupexpenses", "expenses", column: "expenses_id", on_delete: :cascade
+  add_foreign_key "groupexpenses", "groups", on_delete: :cascade
   add_foreign_key "groups", "users", column: "AuthorId", on_delete: :cascade
-  add_foreign_key "groupsexpenses", "expenses", column: "expenses_id", on_delete: :cascade
-  add_foreign_key "groupsexpenses", "groups", on_delete: :cascade
 end
