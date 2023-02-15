@@ -11,22 +11,11 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :Name, style: "display: block" %>
-    <%= form.text_field :Name %>
-  </div>
+  <%= form.text_field :Name, placeholder: "Name"%>
+  <%= form.number_field :Amount, placeholder: "Amount" %>
+  <%= form.collection_select :id, Group.order(:Name),:id,:Name, include_blank: "--Choose Group--" %>
 
-  <div>
-    <%= form.label :Amount, style: "display: block" %>
-    <%= form.number_field :Amount %>
-  </div>
-
-  <div>
-    <%= form.label :Group %>
-    <%= form.collection_select :id, Group.order(:Name),:id,:Name, include_blank: "--Choose Group--" %>
-  </div>
-
-  <div>
+  <div class="greenButton">
     <%= form.submit "Save"%>
   </div>
 <% end %>

@@ -61,6 +61,7 @@ header {
 
 .greenButton > * {
   color: white;
+  background-color: #5fb523;
   text-decoration: none;
   text-align: center;
   padding: 0.5rem;
@@ -91,4 +92,19 @@ header {
 .headerBack > * {
   text-decoration: none;
   color: white;
+}
+
+input {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  border-bottom: solid 1px gray;
+}
+
+select {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  background-color: white;
+  color: gray;
 }
