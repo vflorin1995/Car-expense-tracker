@@ -1,0 +1,10 @@
+<header>Categories</header>
+
+<div id="groups">
+  <% @groups.each do |group| %>
+    <%= render group %>
+  <% end %>
+</div>
+<div class="greenButton">
+  <%= link_to "Add new group", new_group_path %>
+</div>

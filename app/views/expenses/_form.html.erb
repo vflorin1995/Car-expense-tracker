@@ -1,0 +1,21 @@
+<%= form_with model: @expense, url:group_expenses_path	 do |form| %>
+  <% if expense.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :Name, placeholder: "Name"%>
+  <%= form.number_field :Amount, placeholder: "Amount" %>
+  <%= form.collection_select :id, Group.where(AuthorId: current_user.id).order(:Name),:id,:Name, include_blank: "--Choose Group--" %>
+
+  <div class="greenButton">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

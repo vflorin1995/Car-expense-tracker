@@ -1,0 +1,17 @@
+<header>Log in</header>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+  <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+
+  <div class="greenButton">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<div class="headerBack">
+  <%= link_to "<", users_path	 %>
+</div>
+
+<%= render "users/shared/links" %>
