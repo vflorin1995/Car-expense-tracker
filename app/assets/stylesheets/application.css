@@ -139,3 +139,8 @@ h1 {
 .blue > * {
   color: white;
 }
+
+a {
+  text-decoration: none;
+  color: gray;
+}
