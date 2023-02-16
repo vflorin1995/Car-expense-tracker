@@ -4,7 +4,7 @@
 
 <div class="totalExpenses">
   <div> Total </div> 
-  <div> <%= @total %> $ </div>
+  <strong> <%= @total %> $ </strong>
 </div>
 
 <div id="expenses">
@@ -18,7 +18,7 @@
           <%= expense.expenses.created_at.day %> 
         </div>
       </div>
-      <div> <%= expense.expenses.Amount %> $ </div>
+      <strong> <%= expense.expenses.Amount %> $ </strong>
     </div>
   <% end %>
 </div>

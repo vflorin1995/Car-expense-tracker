@@ -7,5 +7,5 @@
   <% group.groupsexpenses.each do |exp| %>
     <% @total += exp.expenses.Amount %>
   <% end %>
-  <div class="total"> <%= @total %> $ </div>
+  <div class="total"> <strong><%= @total %> $ </strong></div>
 </div>

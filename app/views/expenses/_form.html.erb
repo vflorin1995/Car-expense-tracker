@@ -13,7 +13,7 @@
 
   <%= form.text_field :Name, placeholder: "Name"%>
   <%= form.number_field :Amount, placeholder: "Amount" %>
-  <%= form.collection_select :id, Group.order(:Name),:id,:Name, include_blank: "--Choose Group--" %>
+  <%= form.collection_select :id, Group.where(AuthorId: current_user.id).order(:Name),:id,:Name, include_blank: "--Choose Group--" %>
 
   <div class="greenButton">
     <%= form.submit "Save"%>
